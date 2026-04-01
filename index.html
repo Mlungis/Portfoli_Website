@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mlungisi Ncube | Portfolio</title>
+    <link rel="stylesheet" href="indexstyle.css">
+    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+    <style>
+        /* Your existing inline styles remain here */
+        .header-text .role-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 25px;
+        }
+        .header-text .role-tags span {
+            background: linear-gradient(135deg, #ff004f, #5b12e2);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(255, 0, 79, 0.3);
+            transition: all 0.3s;
+        }
+        .header-text .role-tags span:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(91, 18, 226, 0.4);
+        }
+
+        .stats-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 40px 0;
+        }
+        .stat {
+            background: rgba(255,255,255,0.05);
+            padding: 15px 25px;
+            border-radius: 15px;
+            text-align: center;
+            min-width: 140px;
+            backdrop-filter: blur(10px);
+        }
+        .stat span {
+            font-size: 32px;
+            font-weight: 700;
+            color: #ff004f;
+            display: block;
+        }
+        .stat small {
+            color: #ababab;
+            font-size: 13px;
+        }
+
+        .contact p strong {
+            color: #ff004f;
+        }
+
+        /* Small improvement for project descriptions */
+        .work .layer p {
+            font-size: 14.5px;
+            line-height: 1.55;
+            margin: 12px 0 18px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="https://drive.google.com/file/d/1Ee5JV5f8n4NBqFz_gu57mANH5z-IHRhx/view?usp=sharing" target="_blank"> CV</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <p>Full-Stack Developer • Data Enthusiast • Cloud Specialist</p>
+                <h1>Hi, I'm <span>Mlungisi</span><br>Ncube</h1>
+                <p>Final-year BSc Information Technology student at North-West University.<br>Passionate about building scalable, secure, production-ready applications.</p>
+                
+                <div class="role-tags">
+                    <span>Software Engineer</span>
+                    <span>Data Engineer</span>
+                    <span>Data Scientist</span>
+                    <span>Data Analyst</span>
+                    <span>Cloud Engineer</span>
+                    <span>Embedded Systems</span>
+                </div>
+
+                <div class="header-buttons">
+    <a href="https://drive.google.com/file/d/1Ee5JV5f8n4NBqFz_gu57mANH5z-IHRhx/view?usp=sharing" 
+       download="Mlungisi_Ncube_CV.pdf" 
+       class="btn">
+        Download CV <i class="fas fa-download"></i>
+    </a>
+    <a href="#contact" class="btn btn-secondary">Hire Me</a>
+</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-2">
+                    <img src="images/mlu.jpeg" alt="Mlungisi Ncube">
+                </div>
+                <div class="about-col-1">
+                    <h1 class="sub">About Me</h1>
+                    <p>Final-year BSc Information Technology student at North-West University with strong experience in full-stack development, cloud deployment, and database systems. Built and deployed real-world applications using C#, .NET, Firebase, Supabase, and Microsoft Azure. Passionate about building scalable, secure software solutions and seeking a junior developer or internship role to contribute to production-level systems.</p>
+
+                    <div class="stats-row">
+                        <div class="stat">
+                            <span>3+</span>
+                            <small>Production Apps Deployed</small>
+                        </div>
+                        <div class="stat">
+                            <span>Azure + Supabase</span>
+                            <small>Cloud Projects Live</small>
+                        </div>
+                        <div class="stat">
+                            <span>2</span>
+                            <small>Official Certifications</small>
+                        </div>
+                    </div>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience & Certifications</p>
+                    </div>
+
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Programming Languages</span><br>C#, Java, Python, C++, JavaScript</li>
+                            <li><span>Web Technologies</span><br>HTML, CSS, Bootstrap, JavaScript</li>
+                            <li><span>Frameworks & Platforms</span><br>.NET Framework, .NET MAUI, Firebase, Supabase, Microsoft Azure</li>
+                            <li><span>Databases</span><br>Microsoft SQL Server, PostgreSQL, Firebase Realtime Database</li>
+                            <li><span>Tools</span><br>Git, GitHub, Visual Studio, VS Code, Postman, Android Studio, CI/CD</li>
+                            <li><span>Key Concepts</span><br>Object-Oriented Programming, REST APIs, RBAC, Cloud Deployment, Data Structures & Algorithms</li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2024 – 2026 (Expected)</span><br>BSc Information Technology<br>North-West University, South Africa</li>
+                            <p><strong>Relevant Coursework:</strong> Data Structures & Algorithms, Software Engineering, Database Systems, Operating Systems, Computer Networks, Cloud Computing</p>
+                            <li><span>2023</span><br>Grade 12 (Matric)</li>
+                        </ul>
+                        
+                    </div>
+
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2024 – Present</span><br>Independent Full-Stack Developer<br>Built and deployed 3+ production-ready applications (desktop, web & cloud)</li>
+                            <li><span>Certifications</span><br>Python Essentials 1 & 2<br>JavaScript Essentials 1 & 2</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="services">
+        <div class="container">
+            <h1 class="sub">Services</h1>
+            <div class="services-list">
+                <div>
+                    <img src="icons/icons8-homepage-30.png" alt="">
+                    <h2>Full-Stack Web Development</h2>
+                    <p>Modern, responsive web applications with authentication, real-time features, RBAC, and cloud deployment (Azure, Firebase, Supabase).</p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <img src="icons/icons8-email-50.png" alt="">
+                    <h2>Desktop & Mobile Apps</h2>
+                    <p>Cross-platform desktop applications with C#/.NET and Android apps using Java/Android Studio or .NET MAUI.</p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <img src="icons/icons8-services-50.png" alt="">
+                    <h2>Cloud & Database Solutions</h2>
+                    <p>Microsoft Azure deployment, CI/CD pipelines, PostgreSQL/SQL Server, Firebase real-time databases, and secure data management.</p>
+                    <a href="#">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="projects">
+        <div class="container">
+            <h1 class="sub">Projects</h1>
+            <div class="work-List">
+
+                <!-- Smart Shopping List Generator -->
+                <div class="work">
+                    <img src="images/List.png" alt="Smart Shopping List Generator">
+                    <div class="layer">
+                        <h3>Smart Shopping List Generator (Desktop Application)</h3>
+                        <p>Developed a desktop application that generates personalized shopping lists based on dietary preferences, allergies, and budget constraints. Implemented dynamic filtering of store inventory, spending analytics, historical expense tracking, and an admin interface with full CRUD operations and secure local data storage.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/Mlungis/smrtlistgen" target="_blank" class="github"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Marketplace Web Application -->
+                <div class="work">
+                    <img src="images/Dash.png" alt="ZeroMarketplace Dashboard">
+                    <div class="layer">
+                        <h3>Marketplace Web Application (Azure Hosted)</h3>
+                        <p>Engineered a full-featured marketplace platform supporting buyer and seller roles with role-based access control (RBAC). Implemented secure authentication, profile management, product listings, and real-time messaging. Integrated Firebase Authentication and Supabase PostgreSQL for real-time synchronization. Deployed to Microsoft Azure with automated CI/CD pipeline via GitHub.</p>
+                        <div class="project-links">
+                            <a href="https://zeromarket-ezc8bvchd0hbdtfu.southafricanorth-01.azurewebsites.net/" target="_blank" class="live"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="https://github.com/Mlungis/MarketPlace" target="_blank" class="github"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Java File Processing & Data Management -->
+                <div class="work">
+                    <img src="https://via.placeholder.com/600x400/E74C3C/ffffff?text=Java+File+Processor" alt="Java File Processing">
+                    <div class="layer">
+                        <h3>Java File Processing & Data Management Application</h3>
+                        <p>Designed modular Java applications for parsing and transforming structured CSV/text data. Implemented robust exception handling and data validation mechanisms. Applied OOP principles (encapsulation, inheritance, polymorphism) for clean and extensible architecture.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/Mlungis" target="_blank" class="github"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="contact">
+        <div class="container">
+            <h1 class="sub">Let's Connect</h1>
+            <p style="text-align: center; max-width: 700px; margin: 25px auto; font-size: 18px;">
+                I'm actively looking for <strong>Junior / Internship</strong> opportunities in:<br>
+                <strong>Software Engineering • Full-Stack Development • Data Engineering • Data Science • Data Analysis • Cloud Engineering • Embedded Systems</strong>
+            </p>
+            
+            <div class="contact-row">
+                <div class="contact-col">
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:ncubemlu05@gmail.com">ncubemlu05@gmail.com</a></p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:0710658544">071 065 8544</a></p>
+                    <p><i class="fas fa-map-marker-alt"></i> Vereeniging, Gauteng, South Africa</p>
+                </div>
+                <div class="contact-col social">
+                    <a href="https://github.com/Mlungis" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/mlungisi-ncube" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Mlungisi Ncube. Built with passion for clean code & beautiful interfaces ✨</p>
+        </div>
+    </footer>
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for(let tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(let tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+</body>
+</html>

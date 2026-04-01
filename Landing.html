@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mlungisi Ncube • Portfolio</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    :root {
+      --bg: #0b0e17;
+      --card: #141a28;
+      --text: #e2e8f0;
+      --accent: #ff3366;
+      --accent2: #6b46c1;
+      --gray: #94a3b8;
+      --border: #2d3748;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 5%;
+    }
+
+    header {
+      padding: 2.5rem 0 1.5rem;
+      text-align: center;
+    }
+
+    .logo {
+      font-size: 2.8rem;
+      font-weight: 700;
+    }
+
+    .logo span {
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding: 2rem 0 6rem;
+    }
+
+    .landing-content {
+      text-align: center;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 7.5vw, 5rem);
+      line-height: 1.08;
+      margin-bottom: 1.3rem;
+    }
+
+    h1 span { color: var(--accent); }
+
+    .subtitle {
+      font-size: 1.38rem;
+      color: var(--gray);
+      margin-bottom: 4rem;
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .choice-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 2.2rem;
+    }
+
+    .choice-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 3.5rem 2.6rem;
+      transition: all 0.4s ease;
+      cursor: pointer;
+    }
+
+    .choice-card:hover {
+      transform: translateY(-12px);
+      border-color: var(--accent);
+      box-shadow: 0 24px 56px rgba(255,51,102,0.2);
+    }
+
+    .choice-icon {
+      font-size: 4.2rem;
+      margin-bottom: 1.8rem;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .choice-card h2 {
+      font-size: 2rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .choice-card p {
+      color: var(--gray);
+      font-size: 1.08rem;
+      margin-bottom: 2.2rem;
+    }
+
+    .btn-big {
+      display: block;
+      width: 100%;
+      padding: 1.15rem;
+      font-size: 1.18rem;
+      font-weight: 600;
+      border-radius: 50px;
+      transition: all 0.35s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-employer {
+      background: linear-gradient(135deg, var(--accent), #d81b60);
+      color: white;
+    }
+
+    .btn-employer:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 36px rgba(255,51,102,0.38);
+    }
+
+    .btn-guest {
+      background: transparent;
+      border: 2px solid var(--accent2);
+      color: white;
+    }
+
+    .btn-guest:hover {
+      background: var(--accent2);
+      border-color: var(--accent2);
+    }
+
+    /* Modal */
+    #consent-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.78);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .modal-box {
+      background: var(--card);
+      border-radius: 18px;
+      padding: 2.8rem 2.4rem;
+      max-width: 500px;
+      width: 92%;
+      text-align: center;
+      border: 1px solid var(--border);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+    }
+
+    .modal-box h3 {
+      font-size: 1.65rem;
+      margin-bottom: 1.3rem;
+    }
+
+    .modal-box p {
+      color: var(--gray);
+      margin-bottom: 2.2rem;
+      font-size: 1.05rem;
+    }
+
+    .modal-buttons {
+      display: flex;
+      gap: 1.2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-yes, .btn-no {
+      padding: 0.95rem 2.2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-yes {
+      background: var(--accent);
+      color: white;
+    }
+
+    .btn-no {
+      background: transparent;
+      border: 2px solid var(--gray);
+      color: var(--gray);
+    }
+
+    .btn-yes:hover { opacity: 0.92; transform: scale(1.04); }
+    .btn-no:hover  { border-color: white; color: white; }
+
+    footer {
+      padding: 3rem 0 2.5rem;
+      text-align: center;
+      color: #64748b;
+      font-size: 0.96rem;
+      border-top: 1px solid #1e293b;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="logo">
+      <span>Mlungisi Ncube</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="landing-content">
+      <h1>Welcome to my <span>Portfolio</span></h1>
+      <p class="subtitle">
+        Final-year BSc Information Technology student<br>
+        Full-stack • Cloud • Data Enthusiast
+      </p>
+
+      <div class="choice-grid">
+        <div class="choice-card" onclick="showConsentModal()">
+          <div class="choice-icon"><i class="fas fa-briefcase"></i></div>
+          <h2>View as Employer / Recruiter</h2>
+          <p>Optimized view for hiring managers — detailed skills, projects, CV download</p>
+          <div class="btn-big btn-employer">Continue as Employer</div>
+        </div>
+
+        <div class="choice-card" onclick="goToMainPage()">
+          <div class="choice-icon"><i class="fas fa-user"></i></div>
+          <h2>View as Guest</h2>
+          <p>Standard portfolio view — projects, technologies, about and contact</p>
+          <div class="btn-big btn-guest">Continue as Guest</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Consent Modal -->
+<div id="consent-modal">
+  <div class="modal-box">
+    <h3>Notify portfolio owner?</h3>
+    <p>
+      Would you like Mlungisi Ncube to be notified that an employer / recruiter visited his portfolio?<br>
+      <small>(Only basic visit info — no personal data is shared)</small>
+    </p>
+
+    <div class="modal-buttons">
+      <button class="btn-yes" onclick="notifyYes()">Yes, notify him</button>
+      <button class="btn-no" onclick="notifyNo()">No thanks</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Mlungisi Ncube • Built with passion for clean code & modern interfaces</p>
+  </div>
+</footer>
+
+<script>
+
+const MAIN_PAGE = 'index.html';
+
+function showConsentModal() {
+  document.getElementById('consent-modal').style.display = 'flex';
+}
+
+function notifyYes() {
+  // This is where real notification would happen (future step)
+  console.log("[EMPLOYER VISIT DETECTED] → Notification consent = YES");
+  alert("Thank you!\nThe portfolio owner has been notified of your visit.");
+  goToMainPage();
+}
+
+function notifyNo() {
+  console.log("[EMPLOYER VISIT DETECTED] → Notification consent = NO");
+  goToMainPage();
+}
+
+function goToMainPage() {
+  window.location.href = MAIN_PAGE;
+}
+
+// Close modal when clicking outside the box
+document.getElementById('consent-modal').addEventListener('click', function(e) {
+  if (e.target === this) {
+    notifyNo();
+  }
+});
+</script>
+
+</body>
+</html>
